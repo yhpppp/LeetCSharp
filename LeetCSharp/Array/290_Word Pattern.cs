@@ -14,22 +14,29 @@ namespace LeetCSharp.Array
 
       Dictionary<char, string> dic1 = new Dictionary<char, string>();
       Dictionary<string, char> dic2 = new Dictionary<string, char>();
+
       for (int i = 0; i < words.Length; i++)
       {
         if (dic1.ContainsKey(pattern[i]))
         {
-          string word = dic1[pattern[i]];
-          if (word != words[i])
+          string word = words[i];
+          if (dic1[pattern[i]] != word)
           {
             return false;
           }
         }
         else
         {
+          if (dic2.ContainsKey(words[i]))
+          {
+            return false;
+          }
           dic1[pattern[i]] = words[i];
           dic2[words[i]] = pattern[i];
         }
       }
+
+      return true;
     }
   }
 }
