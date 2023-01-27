@@ -7,4 +7,18 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Solution\217_Contains Duplicate.cs" />
+    <Compile Remove="Solution\242_Valid Anagram.cs" />
+    <Compile Remove="Solution\349_Intersection of Two Arrays.cs" />
+    <Compile Remove="Solution\350_Intersection of Two Arrays II.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Solution\217_Contains Duplicate.cs" />
+    <None Include="Solution\242_Valid Anagram.cs" />
+    <None Include="Solution\349_Intersection of Two Arrays.cs" />
+    <None Include="Solution\350_Intersection of Two Arrays II.cs" />
+  </ItemGroup>
+
 </Project>
