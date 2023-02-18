@@ -40,6 +40,7 @@ namespace LeetCSharp.Solution
                 else
                 {
                     stacks.Push(new Command("DO", command.node));
+
                     if(command.node.right != null)
                     {
                         stacks.Push(new Command("GO", command.node.right));
@@ -51,6 +52,8 @@ namespace LeetCSharp.Solution
                     }
                 }
             }
+
+            return list;
         }
         class Command
         {
