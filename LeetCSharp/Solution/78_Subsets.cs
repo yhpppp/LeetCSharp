@@ -38,5 +38,28 @@ namespace LeetCSharp.Solution
                 return res;
             }
         }
+
+
+
+        // backtrack
+        IList<IList<int>> res = new List<IList<int>>();
+        IList<int> list = new List<int>();
+        public IList<IList<int>> Subsets2(int[] nums)
+        {
+            SubsetsRecursion2(nums, 0);
+            return res;
+        }
+
+        public void SubsetsRecursion2(int[] nums, int start)
+        {
+            res.Add(new List<int>(list));
+
+            for (int i = start; i < nums.Length; i++)
+            {
+                list.Add(nums[i]);
+                SubsetsRecursion2(nums,i + 1);
+                list.RemoveAt(list.Count - 1);
+            }
+        }
     }
 }
