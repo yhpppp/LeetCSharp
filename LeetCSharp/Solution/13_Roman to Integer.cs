@@ -29,6 +29,24 @@ namespace LeetCSharp.Solution
             return result;
         }
 
+        public int RomanToInt2(string s)
+        {
+            int result = 0;
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                if (i > 0 && Mapping(s[i]) > Mapping(s[i - 1]))
+                {
+                    result += Mapping(s[i]) - Mapping(s[i - 1]);
+                    i--;
+                }
+                else
+                {
+                    result += Mapping(s[i]);
+                }
+            }
+            return result;
+        }
+
         private int Mapping(char ch)
         {
             switch (ch)
